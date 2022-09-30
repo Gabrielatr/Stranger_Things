@@ -4,7 +4,7 @@
 :root{
     --primary-color: #cf0f0f;
     --primary-color-contrast: #ffffff;
-    --field-background-color: #000;
+    --field-background: #000;
 }
 
 .light-theme {
@@ -43,9 +43,22 @@
     --footer-background-color: #000;
 }
 
+.dark-theme button,
+.dark-theme h1,
+.dark-theme h2,
+.dark-theme h3 {
+    letter-spacing: 5px;
+    font-weight: normal;
+}
+
+.dark-theme .invert-element {
+    transform: rotateZ(180deg) scaleX(-1);
+}
+
 * {
     margin: 0;
     box-sizing: border-box;
+    transition: 1s;
 }
 
 h1, h2, h3 {
@@ -124,10 +137,16 @@ header::before {
     padding: 80px 20px;
     text-align: center;
     z-index: 2;
+    font-size: medium;
+    font-weight: thin;
 }
 
 .header-content img {
     width: 80%;
+}
+
+.filt-logo{
+    filter: drop-shadow(4px 4px 4px white);
 }
 
 .header-content p {
@@ -157,15 +176,12 @@ header::before {
     height: 90%;
     width: 900px;
     max-width: 900px;
-    top: 25px;
-    /*background-color: var(--character-top-image-color);*/
+    top: 300px;
 
     background-image: var(--character-top-image-src);
     background-repeat: no-repeat;
     background-size: 900px;
     opacity: 0.4;
-    /*mask: var(--character-top-image-src) bottom / 100% no-repeat;
-    --webkit-mask: var(--character-top-image-src) bottom / 100% no-repeat;*/
 }
 
 #bottom-characters {
@@ -194,7 +210,7 @@ main::before {
     width: 100%;
     height: 100%;
     position: absolute;
-    background: var(--page-background) no repeat, url("../images/Background/florest.png") no-repeat;
+    background: var(--page-background) no-repeat, url("../images/background/florest.png") no-repeat;
     background-size: cover;
     z-index: -1;
 }
@@ -227,6 +243,8 @@ section {
 
 .invert-element {
     margin-top: 25px;
+}
+.filt{
     filter: drop-shadow(5px 40px 50px var(--primary-color));
 }
 
@@ -253,7 +271,6 @@ section {
     border: 2px solid;
     border-image: linear-gradient(var(--primary-color), var(--primary-color-contrast));
     border-image-slice: 10;
-    filter: drop-shadow(5px 40px 50px var(--primary-color));
 }
 
 /*  GALLERY SECTION  */
@@ -309,7 +326,7 @@ section {
 
 #form-section h2 {
     width: 600px;
-}           /* DICA : espelhar o texto pra baixo e inverter letras na palavra */
+}
 
 #form-section .form-content {
     display: flex;
@@ -401,6 +418,6 @@ footer::before {
 }
 
 footer::after {
-    left: -50px;
-    transform: rotateZ(-10deg);         /*???*/
+    right: -50px;
+    transform: rotateZ(10deg);         /*???*/
 }
