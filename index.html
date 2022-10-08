@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="./css/styles.css">
 </head>
-<body class="dark-theme" aria-label="tema light" role="body">
+<body class="light-theme" aria-label="tema light" role="body">
     
     <header aria-label="cabeçalho">
         <audio id="music" autoplay>
@@ -135,7 +135,7 @@
         document.body.classList.toggle('light-theme');
 
         const theme = document.body.classList[0];
-        const music = theme == 'light-theme' ? 'normal-music.mpeg' : 'inverted-world.mpeg'
+        //const music = theme == 'light-theme' ? 'normal-music.mpeg' : 'inverted-world.mpeg'
     
         const audio = document.getElementById('music');
         audio.src = 'musics/${music}';
@@ -143,7 +143,7 @@
         audio.volume = 0.2;
     }
     </script>
-        <script src="js/main.js"></script>
+        <script type="module" src="./js/main.js"></script>
 
 </body>
 </html>
