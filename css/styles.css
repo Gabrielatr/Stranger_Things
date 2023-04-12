@@ -27,10 +27,10 @@
 
 .dark-theme {
     --page-background: linear-gradient(
-    180deg,
-    #050000 0%,
-    #130404 65%,
-    rgba(19, 1, 1, 0.75) 100%
+        180deg,
+        #050000 0%,
+        #130404 65%,
+        rgba(19, 1, 1, 0.75) 100%
     );
     --header-background-color: #220f0f;
     --highlight-color: #ffffff;
@@ -157,6 +157,7 @@ header::before {
 .header-content button {
     border: 3px solid var(--primary-color);
     color: var(--primary-color);
+    z-index: 5;
 }
 
 .header-content button:hover{
@@ -165,19 +166,20 @@ header::before {
 }
 
 /*    WORLD CHARACTER STYLES     */
-/*
+
 #world-characters {
     width: 100%;
     max-width: 1200px;
     position: absolute;
     align-items: center;
+    
 }
 
 #top-characters {
     height: 90%;
     width: 900px;
     max-width: 900px;
-    top: 300px;
+    top: 300px; position: absolute;
 
     background-image: var(--character-top-image-src);
     background-repeat: no-repeat;
@@ -187,7 +189,7 @@ header::before {
 
 #bottom-characters {
     height: 500px;
-    width: 100%;
+    width: 100%; position: absolute;
     transform: rotateZ(180deg) scaleX(-1);
     background-image: var(--character-bottom-image-src);
     background-repeat: no-repeat;
